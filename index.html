@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio de Roxana Aguirre</title>
+    <style>
+        body {
+            background-image: url("./fondo.jpg");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(228, 228, 225, 0.7); 
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 90%;
+            max-width: 1200px;
+            background-color: rgba(39, 59, 78, 0.8); 
+            padding: 20px;
+            border-radius: px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .content {
+            width: 60%;
+            text-align: left;
+            color: #ffffff;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        .content span {
+            color: #b8c7189b;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #d1d1d1;
+            margin: 5px 0 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        button {
+            background-color: #b8c7189b;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            padding: 12px 24px;
+            margin: 15px 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #f6f5f9fe;
+            color: #4b4b4e9b;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #faf9fdf3;
+        }
+
+        .profile {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile img {
+            width: 100%;
+            box-shadow: 0 8px 9px #b8c7189b(86, 86, 90, 0.8);
+        }
+        .imagenPerfil{
+            height: 70dvh;
+            border-radius: 25px;
+        }
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .content {
+                width: 100%;
+            }
+
+            .profile {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .profile img {
+                width:100%;
+                height: 30dvh;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 28px;
+            }
+
+            .content h2 {
+                font-size: 24px;
+            }
+
+            .content p {
+                font-size: 16px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 14px;
+                border-radius: 20px;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="content">
+            <section id="home-container">
+                <h1>Hola! Soy <span>Roxana Aguirre</span></h1>
+                <h2>Desarrolladora</h2>
+                <p>
+                    Desarrolladora web con experiencia en Python y C++
+                    Enfocada en crear aplicaciones seguras, escalables y de alto rendimiento
+                    con interfaces intuitivas y backend robustos.
+                </p>
+                <button>Descargar CV</button>
+                <button>Contacto</button>
+            </section>
+
+            <section id="about-container" class="hidden">
+                <h2>Sobre mí</h2>
+                <p>Información sobre Roxana Aguirre.</p>
+            </section>
+
+            <section id="skills-container" class="hidden">
+                <h2>Habilidades</h2>
+                <p>Descripción de habilidades.</p>
+            </section>
+
+            <section id="education-container" class="hidden">
+                <h2>Formación</h2>
+                <p>Información sobre la formación académica.</p>
+            </section>
+
+            <section id="projects-container" class="hidden">
+                <h2>Proyectos</h2>
+                <p>Descripción de proyectos realizados.</p>
+            </section>
+
+            <section id="contact-container" class="hidden">
+                <h2>Contacto</h2>
+                <p>Información de contacto.</p>
+            </section>
+
+            <nav>
+                <ul>
+                    <li><button class="nav-button" data-target="home-container">Home</button></li>
+                    <li><button class="nav-button" data-target="about-container">Sobre mí</button></li>
+                    <li><button class="nav-button" data-target="skills-container">Habilidades</button></li>
+                    <li><button class="nav-button" data-target="education-container">Formación</button></li>
+                    <li><button class="nav-button" data-target="projects-container">Proyectos</button></li>
+                    <li><button class="nav-button" data-target="contact-container">Contacto</button></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="profile">
+            <img class="imagenPerfil"src="roxana.jpg" alt="Perfil" />
+        </section>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.nav-button');
+        const sections = document.querySelectorAll('section');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                sections.forEach((section) => section.classList.add('hidden'));
+                const target = button.getAttribute('data-target');
+                document.getElementById(target).classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
